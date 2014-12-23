@@ -1,0 +1,39 @@
+<div class="col-lg-8 col-lg-offset-2">
+  <h1 class="page-header">Register</h1>
+
+  <%= form_for @user, url:{action: "create"} do |f| %>
+
+  <div class="form-group">
+    <div class="col-md-4 col-md-offset-2">
+      <%= f.label :username %>
+      <%= f.text_field :username %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-4 col-md-offset-2">
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-4 col-md-offset-2">
+      <%= f.label :password %>
+      <%= f.text_field :password %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col-md-4 col-md-offset-2">
+      <%= f.label :password_confirmation %>
+      <%= f.text_field :password_confirmation %>
+    </div>
+  </div>
+
+  <div class="actions">
+    <%= f.submit id:"user-create-action" %>
+  </div>
+
+  <% end %>
+</div>
