@@ -24,7 +24,7 @@
     <nav class="navbar navbar-default" role="navigation">
       <div class="container-fluid">
         <% if current_user %>
-        <p>Signed in as <%= current_user.username %> | <%= link_to "Sign Out", signout_path, id:"signout-action" %>
+        <p class="current-user">Signed in as <%= current_user.username %> | <%= link_to "Sign Out", signout_path, id:"signout-action" %>
         </p>
         <% else %>
         <ul class="nav navbar-nav navbar-right">

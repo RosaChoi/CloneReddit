@@ -16,7 +16,7 @@ class AuthenticationController < ApplicationController
   end
 
   def destroy
-    session.clear
+    session.destroy
     redirect_to root_path, notice: "You have been signed out"
   end
 end

@@ -5,16 +5,17 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'posts#index'
 
-  resources :posts
+  resources :posts do
+    resources :comments, only: [:new, :create]
+  end
 
-  get   "/signup" => "registrations#new"
+  get   "/signup" => "registrations#new", as: :signup
   post  "/signup" => "registrations#create"
 
-  get   "/signin" => "authentication#new"
+  get   "/signin" => "authentication#new", as: :signin
   post  "/signin" => "authentication#create"
 
-  get   "/signout" => "authentication#destroy"
-
+  get   "/signout" => "authentication#destroy", as: :signout
 
 
   # Example of regular route:

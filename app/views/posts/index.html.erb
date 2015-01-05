@@ -1,9 +1,17 @@
 <div class="col-md-8 col-md-offset-2">
   <h2>Recent Posts</h2>
   <hr>
+  <% @posts.each do |post| %>
   <div class="panel panel-default">
     <div class="panel-body">
-
+      <%= link_to post.title, post %>
+      <p>
+        posted <%= time_ago_in_words(post.created_at) %> ago -  by
+        <%= post.user.username %>
+      </p>
     </div>
   </div>
+  <% end %>
 </div>
+
+<%= link_to "Post something", new_post_path, class: "btn btn-primary" %>
